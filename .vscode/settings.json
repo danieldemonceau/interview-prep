@@ -1,0 +1,8 @@
+{
+  "cSpell.words": ["nums"],
+  "eslint.validate": ["typescript", "typescriptreact"],
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "always"
+  },
+  "eslint.run": "onType"
+}
