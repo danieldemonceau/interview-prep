@@ -1,5 +1,15 @@
 const isValid = (s: string): boolean => {
-  return true;
+  const parentheses: { [key: string]: string } = {
+    '(': ')',
+    '{': '}',
+    '[': ']',
+  };
+  const parenthesesStack = [];
+  for (let i = 0; i < s.length; i++) {
+    if (parentheses[s[i]]) parenthesesStack.push(parentheses[s[i]]);
+    else if (s[i] !== parenthesesStack.pop()) return false;
+  }
+  return parenthesesStack.length === 0;
 };
 
 console.log(isValid('()'));
