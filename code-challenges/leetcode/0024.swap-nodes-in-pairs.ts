@@ -18,8 +18,6 @@ const swapPairs = (head: ListNode | null): ListNode | null => {
   return dummyHead.next;
 };
 
-console.log(
-  swapPairs(new ListNode(1, new ListNode(2, new ListNode(3, new ListNode(4))))),
-);
+console.log(swapPairs(new ListNode(1, new ListNode(2, new ListNode(3, new ListNode(4))))));
 console.log(swapPairs(new ListNode()));
 console.log(swapPairs(new ListNode(1)));
