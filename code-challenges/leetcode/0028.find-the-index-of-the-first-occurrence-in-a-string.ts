@@ -7,7 +7,7 @@ const strStr = (haystack: string, needle: string): number => {
   return -1;
 };
 
-console.log(strStr("sadbutsad", "sad"));
-console.log(strStr("leetcode", "leeto"));
-console.log(strStr("sasadbutsad", "sad"));
-console.log(strStr("a", "a"));
+console.log(strStr('sadbutsad', 'sad'));
+console.log(strStr('leetcode', 'leeto'));
+console.log(strStr('sasadbutsad', 'sad'));
+console.log(strStr('a', 'a'));
