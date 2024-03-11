@@ -4,7 +4,7 @@ const mySqrt = (x: number): number => {
   let end = x;
   let mid: number = -1;
   while (start <= end) {
-    mid = Math.floor((start + end) / 2);
+    mid = Math.floor(start + (end - start) / 2);
     if (mid * mid === x) return mid;
     if (mid * mid > x) end = mid - 1;
     if (mid * mid < x) start = mid + 1;
