@@ -1,6 +1,6 @@
 const mySqrt = (x: number): number => {
   if (x === 0 || x === 1) return x;
-  let start = 1;
+  let start = 2;
   let end = x;
   let mid: number = -1;
   while (start <= end) {
@@ -9,7 +9,7 @@ const mySqrt = (x: number): number => {
     if (mid * mid > x) end = mid - 1;
     if (mid * mid < x) start = mid + 1;
   }
-  return Math.round(end);
+  return end;
 };
 
 console.log(mySqrt(4));
