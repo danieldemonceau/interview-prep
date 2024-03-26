@@ -1,8 +1,10 @@
 import { TreeNode } from "./classes/TreeNode";
 
 const hasPathSum = (root: TreeNode | null, targetSum: number): boolean => {
-  console.log(root, targetSum);
-  return true;
+  if (!root) return false;
+  targetSum -= root.val;
+  if (!root.left && !root.right && targetSum === 0) return true;
+  return hasPathSum(root.left, targetSum) || hasPathSum(root.right, targetSum);
 };
 
 console.log(
@@ -16,4 +18,4 @@ console.log(
   ),
 );
 console.log(hasPathSum(new TreeNode(1, new TreeNode(2), new TreeNode(3)), 5));
-console.log(null, 0);
+console.log(hasPathSum(null, 0));
