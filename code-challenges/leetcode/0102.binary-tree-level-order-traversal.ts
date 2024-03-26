@@ -1,6 +1,6 @@
 import { TreeNode } from "./classes/TreeNode";
 
-const levelOrder = (root: TreeNode | null): number[][] => {
+const zigzagLevelOrder = (root: TreeNode | null): number[][] => {
   if (!root) return [];
   let leaves: TreeNode[] = [root];
   const solution: number[][] = [];
@@ -13,12 +13,13 @@ const levelOrder = (root: TreeNode | null): number[][] => {
       if (leaf.right) newLeaves.push(leaf.right);
     }
     leaves = newLeaves;
+    if (solution.length % 2 === 0) solution[solution.length - 1].reverse();
   }
   return solution;
 };
 
 console.log(
-  levelOrder(
+  zigzagLevelOrder(
     new TreeNode(
       3,
       new TreeNode(9),
@@ -26,5 +27,5 @@ console.log(
     ),
   ),
 );
-console.log(levelOrder(new TreeNode(1)));
-console.log(levelOrder(null));
+console.log(zigzagLevelOrder(new TreeNode(1)));
+console.log(zigzagLevelOrder(null));
