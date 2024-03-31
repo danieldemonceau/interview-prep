@@ -2,7 +2,7 @@ import { TreeNode } from "./classes/TreeNode";
 
 const maxPathSum = (root: TreeNode | null): number => {
   const maxPathSumHelper = (root: TreeNode | null): [number, number] => {
-    if (!root) return [-Infinity, 0];
+    if (!root) return [-Infinity, -Infinity];
     const [leftMaxSum, leftMaxRoot] = maxPathSumHelper(root.left);
     const [rightMaxSum, rightMaxRoot] = maxPathSumHelper(root.right);
     const maxRoot = root.val + Math.max(0, leftMaxRoot, rightMaxRoot);
@@ -10,6 +10,7 @@ const maxPathSum = (root: TreeNode | null): number => {
       leftMaxSum,
       rightMaxSum,
       leftMaxRoot + root.val + rightMaxRoot,
+      maxRoot,
     );
     return [maxSum, maxRoot];
   };
@@ -26,3 +27,4 @@ console.log(
     ),
   ),
 );
+console.log(maxPathSum(new TreeNode(2, new TreeNode(-1))));
