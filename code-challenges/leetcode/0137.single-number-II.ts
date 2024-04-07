@@ -1,4 +1,5 @@
 const singleNumber = (nums: number[]): number => {
+  console.log(0);
   return 0;
 };
 
