@@ -1,6 +1,11 @@
 const singleNumber = (nums: number[]): number => {
-  console.log(0);
-  return 0;
+  let ones = 0;
+  let twos = 0;
+  for (const num of nums) {
+    ones = (ones ^ num) & ~twos;
+    twos = (twos ^ num) & ~ones;
+  }
+  return ones;
 };
 
 console.log(singleNumber([2, 2, 3, 2]));
