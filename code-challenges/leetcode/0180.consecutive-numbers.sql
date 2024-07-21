@@ -1,4 +1,3 @@
--- Write your PostgreSQL query statement below
 SELECT DISTINCT L1.num AS ConsecutiveNums
 FROM Logs l1
 JOIN Logs l2 ON l1.id = l2.id - 1
